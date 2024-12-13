@@ -1,0 +1,72 @@
+{
+  "name": "markdown-list",
+  "displayName": "%ext.displayName%",
+  "description": "%ext.description%",
+  "version": "1.0.0",
+  "publisher": "We0M",
+  "icon": "./icon/icon.png",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "markdown",
+    "md",
+    "list"
+  ],
+  "bugs": {
+    "url": "https://github.com/We0M/vscode-markdown-list/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/We0M/vscode-markdown-list"
+  },
+  "license": "MIT",
+  "activationEvents": [
+    "onLanguage:markdown",
+    "onLanguage:rmd",
+    "onLanguage:quarto",
+    "workspaceContains:README.md"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "keybindings": [
+      {
+        "command": "markdown.extension.mdContinueList",
+        "key": "enter",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/ && (!suggestWidgetVisible || config.editor.acceptSuggestionOnEnter == 'off') && !editorHasMultipleSelections && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress' && vim.mode != 'Replace' && vim.mode != 'EasyMotionMode' && vim.mode != 'EasyMotionInputMode' && vim.mode != 'SurroundInputMode'"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "%config.title%",
+      "properties": {
+        "markdown.extension.numberedList.marker": {
+          "type": "boolean",
+          "category": "Editor",
+          "default": false,
+          "markdownDescription": "%config.numberedList.marker.description%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "~1.84.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "~14.18.13",
+    "typescript": "~4.5.5",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.3.4"
+  }
+}

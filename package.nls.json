@@ -1,0 +1,6 @@
+{
+  "ext.displayName": "Markdown List",
+  "ext.description": "Continues lists, citations, or task markers in Markdown when pressing Enter.",
+  "config.title": "Markdown List",
+  "config.numberedList.marker.description": "Use increasing numbers as numbered list markers.\n\n**`Warning!`** This extension does not fix incorrect list numbering. Therefore, the numbering in the case of nested lists may differ from what is expected."
+}
